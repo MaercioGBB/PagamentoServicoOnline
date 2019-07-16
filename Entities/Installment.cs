@@ -1,5 +1,5 @@
-﻿
-using System;
+﻿using System;
+using System.Globalization;
 
 namespace installmentsToBePaid.Entities
 {
@@ -12,6 +12,13 @@ namespace installmentsToBePaid.Entities
         {
             DueDate = dueDate;
             Amount = amount;
+        }
+
+        public override string ToString()
+        {
+            return DueDate.ToString("dd/MM/yyyy")
+                + " - "
+                + Amount.ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }
